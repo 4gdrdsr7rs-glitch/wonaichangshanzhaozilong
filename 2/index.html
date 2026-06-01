@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','997795109622102');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=997795109622102&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chongqing Luxury Tour & Image Consultation</title>
+<meta name="robots" content="index,follow,noarchive">
+<meta name="googlebot" content="index,follow,noarchive">
+<style>
+* {margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+html {scroll-behavior:smooth}
+body {color:#222;background:#fff;line-height:1.6;padding-bottom:100px}
+
+/* Hero Section */
+.hero {width:100%;height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:#f8f9fa;padding:20px;background-size:cover;background-position:center}
+.hero h1 {font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:10px;color:#222}
+.hero p {font-size:clamp(0.9rem,1.8vw,1.1rem);max-width:800px;color:#555}
+
+/* Video Section */
+.video-sec {padding:50px 20px;text-align:center;background:#fff}
+.video-sec h2 {font-size:clamp(1.3rem,2.5vw,1.8rem);margin-bottom:8px}
+.video-sec p {font-size:1rem;color:#666;margin-bottom:20px}
+.video-box {max-width:1920px;width:100%;margin:0 auto;border-radius:16px;overflow:hidden;background:#000;max-height:1080px;position:relative}
+.video-box video {width:100%;aspect-ratio:16/9;display:block;object-fit:cover}
+.volume-control {position:absolute;bottom:20px;right:20px;background:rgba(0,0,0,0.5);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;font-size:18px;z-index:10}
+.volume-control:hover {background:rgba(0,0,0,0.7)}
+/* 新增：视频加载失败提示样式 */
+.video-fallback {position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#fff;background:#000;flex-direction:column;padding:20px;text-align:center}
+.video-fallback p {margin-bottom:15px;font-size:1rem}
+.video-fallback button {padding:10px 20px;background:#ff4a8a;color:#fff;border:none;border-radius:8px;cursor:pointer}
+
+/* Service Section */
+.service {padding:60px 20px;background:#f5f7fa;text-align:center}
+.service h2 {font-size:clamp(1.3rem,2.5vw,1.8rem);margin-bottom:40px}
+.service-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:1100px;margin:0 auto}
+.service-card {background:#fff;padding:30px 20px;border-radius:16px}
+.service-card h3 {font-size:1.1rem;margin-bottom:8px}
+.service-card p {font-size:0.95rem;color:#666}
+
+/* Trip Section */
+.trip {padding:60px 20px;background:#fff;text-align:center;max-width:900px;margin:0 auto}
+.trip h2 {font-size:clamp(1.3rem,2.5vw,1.8rem);margin-bottom:30px}
+.trip-item {background:#fdf0f5;padding:18px 20px;border-radius:12px;margin:10px 0;text-align:left}
+.trip-item h4 {color:#d1396d;font-size:1rem;margin-bottom:4px}
+.trip-item p {font-size:0.95rem;color:#444}
+.cta-btn {display:inline-block;background:#ff4a8a;color:#fff;padding:16px 36px;border-radius:50px;text-decoration:none;font-weight:bold;margin-top:30px}
+
+/* Gallery Section */
+.gallery {padding:60px 20px;background:#f5f7fa}
+.gallery-grid {display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:800px;margin:0 auto}
+.gallery img {width:100%;border-radius:14px;object-fit:cover;aspect-ratio:1/1;decoding:async}
+
+/* Modal Style */
+.modal {display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:1000;overflow-y:auto}
+.modal-content {position:relative;margin:50px auto;background:#fff;width:90%;max-width:500px;max-height:80vh;overflow-y:auto;padding:25px;border-radius:16px;scrollbar-width:thin}
+.modal-content::-webkit-scrollbar {width:6px}
+.modal-content::-webkit-scrollbar-track {background:#f1f1f1;border-radius:10px}
+.modal-content::-webkit-scrollbar-thumb {background:#ccc;border-radius:10px}
+.modal-content::-webkit-scrollbar-thumb:hover {background:#999}
+.close {position:absolute;top:15px;right:18px;font-size:1.5rem;cursor:pointer;background:none;border:none;color:#333;transition:color 0.2s}
+.close:hover {color:#ff4a8a}
+.modal-content h3 {margin-bottom:15px;color:#222;border-bottom:1px solid #eee;padding-bottom:10px}
+.modal-content p {margin-bottom:12px;line-height:1.7;color:#555}
+.modal-content h4 {margin:18px 0 10px;color:#333;font-size:1.1rem}
+
+/* Float Button */
+.float-wa {position:fixed;bottom:20px;left:20px;background:#25d366;color:#fff;padding:14px 22px;border-radius:50px;text-decoration:none;font-weight:bold;box-shadow:0 3px 10px rgba(0,0,0,0.2);z-index:999}
+
+/* Footer */
+footer {padding:40px 20px;background:#222;color:#fff;text-align:center}
+.footer-links {margin-bottom:20px}
+.footer-links button {background:none;border:none;color:#ccc;margin:0 8px;font-size:0.9rem;cursor:pointer;transition:color 0.2s}
+.footer-links button:hover {color:#fff}
+footer p {font-size:0.85rem;color:#aaa;margin-top:10px}
+.compliance {background:#fff4e5;color:#e65100;padding:12px;font-size:0.85rem;text-align:center}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Modal Control
+  window.openModal = function(id) { 
+    const modal = document.getElementById(id);
+    modal.style.display = "block";
+    modal.querySelector('.modal-content').scrollTop = 0;
+  };
+  
+  window.closeModal = function(id) { 
+    document.getElementById(id).style.display = "none"; 
+  };
+
+  // Close modal when click outside
+  document.addEventListener('click', function(e) {
+    if(e.target.classList.contains('modal')) {
+      e.target.style.display = 'none';
+    }
+  });
+
+  // Video Control Optimization
+  const video = document.getElementById('main-video');
+  const volumeBtn = document.getElementById('volume-btn');
+  const videoBox = document.querySelector('.video-box');
+  let isMuted = false; // 核心修改：默认不静音
+  
+  // 新增：创建视频失败回退元素
+  const fallbackEl = document.createElement('div');
+  fallbackEl.className = 'video-fallback';
+  fallbackEl.style.display = 'none';
+  fallbackEl.innerHTML = `
+    <p>Video playback failed. Please try again or check your network.</p>
+    <button id="reload-video">Reload Video</button>
+  `;
+  videoBox.appendChild(fallbackEl);
+  const reloadBtn = document.getElementById('reload-video');
+
+  // Initialize video state
+  video.muted = isMuted; // 核心修改：默认不静音
+  video.playsInline = true; // 强制移动端内联播放（iOS关键）
+  volumeBtn.textContent = isMuted ? '🔇' : '🔊'; // 核心修改：默认显示有声图标
+
+  // 新增：视频重新加载方法
+  function reloadVideo() {
+    fallbackEl.style.display = 'none';
+    video.load(); // 重新加载视频源
+    initVideoPlay();
+  }
+
+  // Video play handler with error fallback
+  function initVideoPlay() {
+    // 优先检查浏览器自动播放政策
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(err => {
+        console.log('Video auto-play failed, waiting for user interaction:', err);
+        // 显示播放按钮提示用户交互（因浏览器政策，有声播放需要用户交互）
+        const playPrompt = document.createElement('div');
+        playPrompt.className = 'video-fallback';
+        playPrompt.innerHTML = `
+          <p>Click to play video with sound</p>
+          <button id="manual-play">Play</button>
+        `;
+        videoBox.appendChild(playPrompt);
+        document.getElementById('manual-play').addEventListener('click', () => {
+          video.muted = false; // 确保点击后取消静音
+          video.play().then(() => {
+            video.preload = 'auto';
+            playPrompt.remove();
+          }).catch(err => console.log('Manual play failed:', err));
+        }, { once: true });
+      });
+    }
+  }
+
+  // Volume toggle with state sync
+  volumeBtn.addEventListener('click', function() {
+    isMuted = !isMuted;
+    video.muted = isMuted;
+    volumeBtn.textContent = isMuted ? '🔇' : '🔊';
+  });
+
+  // 新增：视频错误处理增强
+  video.addEventListener('error', function() {
+    console.error('Video load failed:', video.error);
+    video.poster = 'video-thumbnail.jpg';
+    fallbackEl.style.display = 'flex'; // 显示失败提示
+  });
+
+  // 新增：重新加载按钮事件
+  reloadBtn.addEventListener('click', reloadVideo);
+
+  // 优化：DOM就绪后立即初始化（移除延迟，避免加载超时）
+  initVideoPlay();
+
+  // 新增：页面可见性变化时暂停/播放（优化性能）
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      video.pause();
+    } else { 
+      // 有声状态下也尝试恢复播放（仍受浏览器政策限制）
+      video.play().catch(() => {});
+    }
+  });
+});
+</script>
+</head>
+<body>
+<section class="hero">
+  <h1>Come to Chongqing, Be Your Best Version</h1>
+  <p>A journey to enhance your charm and confidence with private, secure one-on-one professional consulting services.</p>
+</section>
+
+<section class="video-sec">
+  <div class="video-box">
+    <!-- 只在这里增加了封面 poster，其他完全不动 -->
+    <video id="main-video" autoplay loop playsinline preload="auto" poster="https://img.ruiximeixue.com/2%E7%89%88%E7%B4%A0%E6%9D%90/%E6%9C%AA%E5%91%BD%E5%90%8D.jpg">
+      <source src="https://img.ruiximeixue.com/2%E7%89%88%E7%B4%A0%E6%9D%90/0531_1.mp4" type="video/mp4">
+      <source src="https://img.ruiximeixue.com/2%E7%89%88%E7%B4%A0%E6%9D%90/0531_1.webm" type="video/webm">
+      <!-- 新增：纯文本回退 -->
+      Your browser does not support the video tag. Please update your browser to view the video.
+    </video>
+    <button class="volume-control" id="volume-btn">🔊</button> <!-- 核心修改：默认显示有声图标 -->
+  </div>
+  <h2>Chongqing Luxury Tour & Meet Better You</h2>
+  <p>Private Travel | One-on-One Image Consultation | VIP Service | Safe & Discreet</p>
+</section>
+
+<section class="service">
+  <h2>Our Exclusive Services</h2>
+  <div class="service-grid">
+    <div class="service-card"><h3>Luxury Travel</h3><p>VIP pickup, 5-star hotel, city tour & private itinerary</p></div>
+    <div class="service-card"><h3>Customized Image Consultation</h3><p>Full-body style advice and confidence-building services</p></div>
+    <div class="service-card"><h3>Private & Safe</h3><p>100% discreet service, no hidden fees, full privacy</p></div>
+    <div class="service-card"><h3>Full Support</h3><p>Bilingual accompaniment and 24/7 VIP support</p></div>
+  </div>
+</section>
+
+<section class="trip">
+  <h2>5D4N Beauty Transformation Trip</h2>
+  <div class="trip-item"><h4>Day 1 - Arrival & First Experience</h4><p>VIP airport pickup, private consultation & customized plan confirmation</p></div>
+  <div class="trip-item"><h4>Day 2 - Aesthetics Customization Day</h4><p>Professional one-on-one guidance & exclusive beauty arrangement</p></div>
+  <div class="trip-item"><h4>Day 3 - River View Relaxation</h4><p>Comfortable rest and romantic restorative setting</p></div>
+  <div class="trip-item"><h4>Day 4 - Mountain City Tour</h4><p>Deep exploration tour and comfortable accommodation</p></div>
+  <div class="trip-item"><h4>Day 5 - Culinary Delight & Confidence Return</h4><p>Delicious food, final check-up, and VIP shuttle home</p></div>
+  <a href="https://wa.me/8617775737394" class="cta-btn">Book Now</a>
+</section>
+
+<section class="gallery">
+  <div class="gallery-grid">
+    <img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/6.webp" alt="Environment" loading="lazy" decoding="async">
+    <img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/7.webp" alt="Environment" loading="lazy" decoding="async">
+    <img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/13.webp" alt="Environment" loading="lazy" decoding="async">
+    <img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/15.webp" alt="Environment" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<a href="https://wa.me/8617775737394" class="float-wa">Contact Now</a>
+
+<footer>
+  <div class="footer-links">
+    <button onclick="openModal('privacy')">Privacy Policy</button>
+    <button onclick="openModal('terms')">Terms of Service</button>
+    <button onclick="openModal('disclaimer')">Disclaimer</button>
+    <button onclick="openModal('contact')">Contact Us</button>
+  </div>
+  <p>© 2025 Ruixi Aesthetics. All rights reserved.</p>
+</footer>
+
+<div id="privacy" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('privacy')">&times;</span>
+    <h3>Privacy Policy</h3>
+    <p>Last updated: January 1, 2025</p>
+    <h4>1. Introduction</h4>
+    <p>Ruixi Aesthetics ("we", "us", or "our") is committed to protecting your privacy and personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.</p>
+    <h4>2. Information We Collect</h4>
+    <p>We may collect personal identification information from you in a variety of ways, including when you contact us, book our services, and interact with our website. The information we may collect includes:</p>
+    <p>- Contact information (name, email address, phone number)</p>
+    <p>- Travel preferences and requirements</p>
+    <p>- Payment information (processed securely through third-party providers)</p>
+    <p>- Demographic information (age, gender, nationality)</p>
+    <h4>3. How We Use Your Information</h4>
+    <p>We use the collected information for various purposes, including:</p>
+    <p>- To provide and maintain our Services</p>
+    <p>- To process your bookings and requests</p>
+    <p>- To communicate with you and respond to inquiries</p>
+    <p>- To improve our Services and customize your experience</p>
+    <p>- To send promotional information (with your consent)</p>
+    <p>- To comply with legal obligations</p>
+    <h4>4. Data Security</h4>
+    <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure.</p>
+    <h4>5. Third-Party Disclosure</h4>
+    <p>We do not sell, trade, or otherwise transfer your personal information to outside parties without your consent, except as required by law or to provide our Services (e.g., travel partners, payment processors).</p>
+    <h4>6. Your Rights</h4>
+    <p>You have the right to access, correct, or delete your personal information. You may also withdraw your consent to our use of your information at any time by contacting us via WhatsApp or email.</p>
+    <h4>7. Changes to This Privacy Policy</h4>
+    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.</p>
+    <h4>8. Contact Us</h4>
+    <p>If you have any questions about this Privacy Policy, please contact us through the WhatsApp link provided on our website.</p>
+  </div>
+</div>
+
+<div id="terms" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('terms')">&times;</span>
+    <h3>Terms of Service</h3>
+    <p>Last updated: January 1, 2025</p>
+    <h4>1. Acceptance of Terms</h4>
+    <p>By accessing and using our Services, you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree with any part of these terms, you must not use our Services.</p>
+    <h4>2. Description of Services</h4>
+    <p>Ruixi Aesthetics offers luxury travel and image consultation services in Chongqing, including customized travel itineraries, one-on-one image consultation, VIP transportation and accommodation arrangements, and bilingual support services. We reserve the right to modify or discontinue any service at any time without prior notice.</p>
+    <h4>3. Booking and Payment</h4>
+    <p>- All bookings require a non-refundable deposit (50% of the total amount) to confirm your reservation.</p>
+    <p>- The remaining balance must be paid at least 7 days prior to your arrival.</p>
+    <p>- Payments can be made via bank transfer, credit card, or other secure methods agreed upon by both parties.</p>
+    <p>- Prices are quoted in USD and do not include additional expenses such as personal shopping, optional activities, or international flights.</p>
+    <h4>4. Cancellation and Refund Policy</h4>
+    <p>- Cancellations made 14 or more days before arrival: Refund of the deposit minus a 10% administrative fee.</p>
+    <p>- Cancellations made 7-13 days before arrival: Refund of 50% of the deposit.</p>
+    <p>- Cancellations made less than 7 days before arrival: No refund of any payments made.</p>
+    <p>- In case of force majeure (e.g., natural disasters, government restrictions), we may offer a rescheduling option or partial refund at our discretion.</p>
+    <h4>5. Client Responsibilities</h4>
+    <p>- You must provide accurate and complete information when booking our services.</p>
+    <p>- You are responsible for obtaining all necessary travel documents (passport, visa, etc.) and complying with local laws and regulations.</p>
+    <p>- You agree to behave in a respectful manner towards our staff and partners during the service period.</p>
+    <h4>6. Limitation of Liability</h4>
+    <p>Ruixi Aesthetics shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our Services, including but not limited to loss of enjoyment, travel delays, or personal injury not caused by our negligence.</p>
+    <h4>7. Governing Law</h4>
+    <p>These terms shall be governed by and construed in accordance with the laws of Chongqing, China, without regard to its conflict of law provisions.</p>
+    <h4>8. Dispute Resolution</h4>
+    <p>Any disputes arising out of or in connection with these terms shall be resolved through amicable negotiation. If negotiation fails, the dispute shall be submitted to arbitration in Chongqing.</p>
+  </div>
+</div>
+
+<div id="disclaimer" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('disclaimer')">&times;</span>
+    <h3>Disclaimer</h3>
+    <p>Last updated: January 1, 2025</p>
+    <h4>1. General Disclaimer</h4>
+    <p>The information provided on this website and through our services is for general informational purposes only. It is not intended to constitute professional advice (including medical, aesthetic, or legal advice) and should not be relied upon as such.</p>
+    <h4>2. No Medical Services</h4>
+    <p>Ruixi Aesthetics provides image consultation and travel services only. We do not provide any medical treatments, cosmetic procedures, or healthcare services. All aesthetic advice is for cosmetic and styling purposes only and does not constitute medical advice. Before making any decisions related to cosmetic treatments or medical procedures, you should consult with a qualified healthcare professional.</p>
+    <h4>3. Service Results</h4>
+    <p>We make no guarantees or warranties regarding the results of our image consultation services. Results may vary depending on individual factors such as personal preferences, lifestyle, and physical characteristics.</p>
+    <h4>4. Third-Party Services</h4>
+    <p>We may collaborate with third-party service providers (e.g., hotels, transportation companies, beauty salons) to deliver our services. We do not assume liability for the quality or performance of third-party services, and your use of such services is subject to the third party's own terms and conditions.</p>
+    <h4>5. Website Content</h4>
+    <p>We strive to keep the information on our website accurate and up-to-date, but we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the website or the information, products, services, or related graphics contained on the website for any purpose.</p>
+    <h4>6. Limitation of Liability</h4>
+    <p>In no event will Ruixi Aesthetics be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website or our services.</p>
+    <h4>7. External Links</h4>
+    <p>Our website may contain links to external websites that are not operated by us. We have no control over the content and practices of these sites and accept no responsibility for them or for any loss or damage that may arise from your use of them.</p>
+    <h4>8. Indemnification</h4>
+    <p>You agree to indemnify and hold harmless Ruixi Aesthetics, its directors, employees, agents, and partners from and against any claims, liabilities, damages, losses, and expenses, including reasonable legal fees, arising out of or in any way connected with your use of our services or violation of these terms.</p>
+  </div>
+</div>
+
+<div id="contact" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('contact')">&times;</span>
+    <h3>Contact Us</h3>
+    <p>We are here to answer any questions you may have about our luxury travel and image consultation services in Chongqing.</p>
+    <p><strong>WhatsApp:</strong> +86 15593481658</p>
+    <p><strong>Email:</strong> info@ruixiaesthetics.com</p>
+    <p><strong>Address:</strong> Building 22, Tianlan Avenue, Jiangbei District, Chongqing City</p>
+    <p><strong>Working Hours:</strong> 9:00 AM - 8:00 PM (CST), 7 days a week</p>
+    <p>Our team will respond to your inquiries within 24 hours. For urgent requests, please contact us via WhatsApp for immediate assistance.</p>
+  </div>
+</div>
+
+<div class="compliance">All content for aesthetic consultation only. No medical treatment or effect guarantee.</div>
+</body>
+</html>
