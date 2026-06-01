@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (playPromise !== undefined) {
       playPromise.catch(err => {
         console.log('Video auto-play failed, waiting for user interaction:', err);
-        // 显示播放按钮提示用户交互（因浏览器政策，有声播放需要用户交互）
+        // 显示播放按钮提示用户交互（因浏览器政策，有声播放要用户交互）
         const playPrompt = document.createElement('div');
         playPrompt.className = 'video-fallback';
         playPrompt.innerHTML = `
