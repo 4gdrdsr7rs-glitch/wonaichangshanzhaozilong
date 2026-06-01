@@ -109,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const videoBox = document.querySelector('.video-box');
   let isMuted = false; // 核心修改：默认不静音
   
-  // 新增：创建视频失败回退元素
   const fallbackEl = document.createElement('div');
   fallbackEl.className = 'video-fallback';
   fallbackEl.style.display = 'none';
