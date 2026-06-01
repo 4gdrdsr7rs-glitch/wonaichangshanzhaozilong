@@ -165,33 +165,47 @@ document.addEventListener('DOMContentLoaded', function() {
   const volumeBtn = document.getElementById('volume-btn');
   
   let isPlaying = false;
-  let isMuted = false; // 默认不静音 → 有声音
+  let isMuted = false;
 
   // 初始化
   video.muted = isMuted;
   volumeBtn.textContent = '🔊';
 
-  // 中央播放按钮
-  centerPlay.addEventListener('click', function() {
-    video.play().then(() => {
+  // 兼容手机端：点击中央播放（修复无法播放）
+  centerPlay.addEventListener('click', async function() {
+    try {
+      // 强制加载视频
+      video.load();
+      await video.play();
       isPlaying = true;
-      centerPlay.style.display = 'none'; // 隐藏中央按钮
-      ppBtn.style.display = 'flex';      // 显示右下角按钮
+      centerPlay.style.display = 'none';
+      ppBtn.style.display = 'flex';
       ppBtn.textContent = '⏸️';
-    });
+    } catch (e) {
+      // 手机浏览器兼容 fallback
+      video.muted = false;
+      video.play().then(() => {
+        isPlaying = true;
+        centerPlay.style.display = 'none';
+        ppBtn.style.display = 'flex';
+        ppBtn.textContent = '⏸️';
+      });
+    }
   });
 
   // 右下角暂停/播放
-  ppBtn.addEventListener('click', function() {
-    if (isPlaying) {
-      video.pause();
-      isPlaying = false;
-      ppBtn.textContent = '▶️';
-    } else {
-      video.play();
-      isPlaying = true;
-      ppBtn.textContent = '⏸️';
-    }
+  ppBtn.addEventListener('click', async function() {
+    try {
+      if (isPlaying) {
+        video.pause();
+        isPlaying = false;
+        ppBtn.textContent = '▶️';
+      } else {
+        await video.play();
+        isPlaying = true;
+        ppBtn.textContent = '⏸️';
+      }
+    } catch (e) {}
   });
 
   // 音量开关
@@ -225,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <section class="video-sec">
   <div class="video-box">
-    <video id="main-video" loop playsinline preload="none" 
+    <video id="main-video" loop playsinline preload="auto" 
       poster="https://img.ruiximeixue.com/2%E7%89%88%E7%B4%A0%E6%9D%90/%E6%9C%AA%E5%91%BD%E5%90%8D.jpg">
       <source src="https://img.ruiximeixue.com/2%E7%89%88%E7%B4%A0%E6%9D%90/0531_1.mp4" type="video/mp4">
       <source src="https://img.ruiximeixue.com/2%E7%89%88%E7%B4%A0%E6%9D%90/0531_1.webm" type="video/webm">
