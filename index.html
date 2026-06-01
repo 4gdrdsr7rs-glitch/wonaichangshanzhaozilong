@@ -32,6 +32,10 @@ body {color:#222;background:#fff;line-height:1.6;padding-bottom:100px}
 .video-box video {width:100%;aspect-ratio:16/9;display:block;object-fit:cover}
 .volume-control {position:absolute;bottom:20px;right:20px;background:rgba(0,0,0,0.5);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;font-size:18px;z-index:10}
 .volume-control:hover {background:rgba(0,0,0,0.7)}
+/* 新增：视频加载失败提示样式 */
+.video-fallback {position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#fff;background:#000;flex-direction:column;padding:20px;text-align:center}
+.video-fallback p {margin-bottom:15px;font-size:1rem}
+.video-fallback button {padding:10px 20px;background:#ff4a8a;color:#fff;border:none;border-radius:8px;cursor:pointer}
 
 /* Service Section */
 .service {padding:60px 20px;background:#f5f7fa;text-align:center}
@@ -102,28 +106,53 @@ document.addEventListener('DOMContentLoaded', function() {
   // Video Control Optimization
   const video = document.getElementById('main-video');
   const volumeBtn = document.getElementById('volume-btn');
+  const videoBox = document.querySelector('.video-box');
   let isMuted = true;
   
+  // 新增：创建视频失败回退元素
+  const fallbackEl = document.createElement('div');
+  fallbackEl.className = 'video-fallback';
+  fallbackEl.style.display = 'none';
+  fallbackEl.innerHTML = `
+    <p>Video playback failed. Please try again or check your network.</p>
+    <button id="reload-video">Reload Video</button>
+  `;
+  videoBox.appendChild(fallbackEl);
+  const reloadBtn = document.getElementById('reload-video');
+
   // Initialize video state
   video.muted = isMuted;
-  volumeBtn.textContent = isMuted ? '🔇' : '🔊'; // Fix initial icon mismatch
+  video.playsInline = true; // 强制移动端内联播放（iOS关键）
+  volumeBtn.textContent = isMuted ? '🔇' : '🔊';
+
+  // 新增：视频重新加载方法
+  function reloadVideo() {
+    fallbackEl.style.display = 'none';
+    video.load(); // 重新加载视频源
+    initVideoPlay();
+  }
 
   // Video play handler with error fallback
   function initVideoPlay() {
-    if (video.paused) {
-      video.play().catch(err => {
+    // 优先检查浏览器自动播放政策
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(err => {
         console.log('Video auto-play failed, waiting for user interaction:', err);
-        const playOnInteraction = () => {
+        // 显示播放按钮提示用户交互
+        const playPrompt = document.createElement('div');
+        playPrompt.className = 'video-fallback';
+        playPrompt.innerHTML = `
+          <p>Click to play video</p>
+          <button id="manual-play">Play</button>
+        `;
+        videoBox.appendChild(playPrompt);
+        document.getElementById('manual-play').addEventListener('click', () => {
           video.play().then(() => {
-            // Load video content after play success
             video.preload = 'auto';
-          }).catch(err => console.log('Play on interaction failed:', err));
-          document.removeEventListener('touchstart', playOnInteraction);
-          document.removeEventListener('click', playOnInteraction);
-        };
-        // Listen for any user interaction to trigger play
-        document.addEventListener('touchstart', playOnInteraction, { once: true });
-        document.addEventListener('click', playOnInteraction, { once: true });
+            playPrompt.remove();
+          }).catch(err => console.log('Manual play failed:', err));
+        }, { once: true });
       });
     }
   }
@@ -135,13 +164,26 @@ document.addEventListener('DOMContentLoaded', function() {
     volumeBtn.textContent = isMuted ? '🔇' : '🔊';
   });
 
-  // Lazy init video play (reduce initial load)
-  setTimeout(initVideoPlay, 500);
-
-  // Video error handling
+  // 新增：视频错误处理增强
   video.addEventListener('error', function() {
     console.error('Video load failed:', video.error);
-    video.poster = 'video-thumbnail.jpg'; // Show poster if video fails
+    video.poster = 'video-thumbnail.jpg';
+    fallbackEl.style.display = 'flex'; // 显示失败提示
+  });
+
+  // 新增：重新加载按钮事件
+  reloadBtn.addEventListener('click', reloadVideo);
+
+  // 优化：DOM就绪后立即初始化（移除延迟，避免加载超时）
+  initVideoPlay();
+
+  // 新增：页面可见性变化时暂停/播放（优化性能）
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      video.pause();
+    } else if (video.muted) { // 仅在静音状态下自动恢复播放
+      video.play().catch(() => {});
+    }
   });
 });
 </script>
@@ -154,8 +196,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <section class="video-sec">
   <div class="video-box">
-    <video id="main-video" autoplay muted loop playsinline preload="none" poster="video-thumbnail.jpg">
+    <!-- 优化：新增MP4格式（兼容性优先），保留webm作为备选 -->
+    <video id="main-video" autoplay muted loop playsinline preload="auto" poster="video-thumbnail.jpg">
+      <source src="https://img.ruiximeixue.com/2%E7%89%88%E7%B4%A0%E6%9D%90/0531_1.mp4" type="video/mp4">
       <source src="https://img.ruiximeixue.com/2%E7%89%88%E7%B4%A0%E6%9D%90/0531_1.webm" type="video/webm">
+      <!-- 新增：纯文本回退 -->
+      Your browser does not support the video tag. Please update your browser to view the video.
     </video>
     <button class="volume-control" id="volume-btn">🔇</button>
   </div>
