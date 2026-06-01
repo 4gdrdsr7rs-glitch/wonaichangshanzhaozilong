@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "2quiet-snow-4061",
+  "compatibility_date": "2026-06-01",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "1"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
