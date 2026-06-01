@@ -1,306 +1,383 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <!-- Meta Pixel Code -->
 <script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','997795109622102');
-fbq('track','PageView');
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '997795109622102');
+fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=997795109622102&ev=PageView&noscript=1"/></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=997795109622102&ev=PageView&noscript=1"
+/></noscript>
 <!-- End Meta Pixel Code -->
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chongqing Luxury Tour & Image Consultation</title>
-<meta name="robots" content="index,follow,noarchive">
-<meta name="googlebot" content="index,follow,noarchive">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Aesthetic Journey in Chongqing: Customize Your Confidence Curve</title>
+
+<meta property="og:type" content="service">
+<meta property="og:category" content="Aesthetic services, tourism services">
+<meta property="og:title" content="Aesthetic Journey in Chongqing: Customize Your Confidence Curve">
+<meta property="og:description" content="Chongqing travel + aesthetic consultation, sculpting natural curves for Southeast Asian women, bilingual accompaniment, private and safe.">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<meta name="robots" content="noarchive">
+
 <style>
-* {margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-html {scroll-behavior:smooth}
-body {color:#222;background:#fff;line-height:1.6;padding-bottom:100px}
-
-/* Hero Section */
-.hero {width:100%;height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:#f8f9fa;padding:20px}
-.hero h1 {font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:10px;color:#222}
-.hero p {font-size:clamp(0.9rem,1.8vw,1.1rem);max-width:800px;color:#555}
-
-/* Video Section */
-.video-sec {padding:50px 20px;text-align:center;background:#fff}
-.video-sec h2 {font-size:clamp(1.3rem,2.5vw,1.8rem);margin-bottom:8px}
-.video-sec p {font-size:1rem;color:#666;margin-bottom:20px}
-.video-box {
-  max-width:1920px;width:100%;margin:0 auto;border-radius:16px;overflow:hidden;
-  background:#000;max-height:1080px;position:relative;
-  background-image: url('https://img.ruiximeixue.com/2%E7%89%88%E7%B4%A0%E6%9D%90/%E6%9C%AA%E5%91%BD%E5%90%8D.jpg');
-  background-size: cover;
-  background-position: center;
+*{margin:0;padding:0;box-sizing:border-box;font-family:PingFang SC,Microsoft YaHei,sans-serif}
+body{background:#fff;color:#222;line-height:1.65}
+.container{width:100%;max-width:750px;margin:0 auto;padding:0 18px}
+img{width:100%;display:block;object-fit:cover}
+.btn{
+display:inline-block;
+background:#b4926b;
+color:#fff;
+font-size:16px;
+padding:14px 32px;
+border-radius:50px;
+text-decoration:none;
+margin-top:12px;
+font-weight:500;
+transition:all 0.3s ease;
 }
-.video-box video {
-  width:100%;aspect-ratio:16/9;display:block;object-fit:cover;
-  background:transparent;
+.btn:hover{
+background:#a07e58;
+transform:translateY(-2px);
+}
+.btn:active{
+background:#907048;
+transform:translateY(0);
 }
 
-/* 中央大播放按钮 */
-.center-play {
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  width:80px;
-  height:80px;
-  border-radius:50%;
-  background:rgba(0,0,0,0.6);
-  color:#fff;
-  border:none;
-  font-size:36px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  z-index:20;
-  transition:0.2s;
+.hero{
+ min-height: 320px; 
+ height: 40vh; 
+ padding: 40px 20px; 
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ text-align:center;
+ color:#fff;
+ position:relative;
+ background-color: #b4926b; 
 }
-.center-play:hover {background:rgba(0,0,0,0.8);scale:1.05;}
+.hero::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.35);z-index:1}
+.hero .content{position:relative;z-index:2;width:100%;max-width:600px;} 
+.hero h1{font-size: clamp(22px, 5vw, 28px); 
+ margin-bottom: 12px;
+ line-height: 1.3;}
+.hero p{font-size: clamp(14px, 3vw, 15px); 
+opacity:.95;
+margin-bottom: 20px;
+line-height: 1.5;} 
 
-/* 右下角暂停按钮 */
-.play-pause-btn {
-  position:absolute;
-  bottom:20px;
-  right:70px;
-  background:rgba(0,0,0,0.5);
-  color:#fff;
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:none;
-  cursor:pointer;
-  font-size:18px;
-  z-index:10;
-  display:none; /* 默认隐藏 */
+.compliance{background:#fff4e5;color:#cc5500;font-weight:bold;padding:14px;text-align:center;font-size:14px}
+
+.img-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-top:16px;
 }
-.play-pause-btn:hover {background:rgba(0,0,0,0.7)}
-
-/* 右下角音量按钮 */
-.volume-control {
-  position:absolute;
-  bottom:20px;
-  right:20px;
-  background:rgba(0,0,0,0.5);
-  color:#fff;
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:none;
-  cursor:pointer;
-  font-size:18px;
-  z-index:10;
+.img-grid img{
+width:100%;
+aspect-ratio:3/4;
+object-fit:cover;
+border-radius:14px;
 }
-.volume-control:hover {background:rgba(0,0,0,0.7)}
 
-/* Service Section */
-.service {padding:60px 20px;background:#f5f7fa;text-align:center}
-.service h2 {font-size:clamp(1.3rem,2.5vw,1.8rem);margin-bottom:40px}
-.service-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:1100px;margin:0 auto}
-.service-card {background:#fff;padding:30px 20px;border-radius:16px}
-.service-card h3 {font-size:1.1rem;margin-bottom:8px}
-.service-card p {font-size:0.95rem;color:#666}
+.package{background:#fafafa;padding:50px 0;text-align:center}
+.package h2{font-size:22px;margin-bottom:10px}
+.package .sub{font-size:14px;color:#666;margin-bottom:30px}
+.card{background:#fff;border-radius:16px;padding:28px;margin:0 auto 20px;max-width:480px;border:1px solid #eee;text-align:left}
+.card h3{color:#b4926b;margin-bottom:12px}
+.card p{font-size:14px;margin:4px 0}
+.price{font-size:20px;font-weight:bold;color:#222;margin:12px 0}
+.old{text-decoration:line-through;color:#999;font-size:15px}
+.new{color:#b4926b;font-size:22px}
 
-/* Trip Section */
-.trip {padding:60px 20px;background:#fff;text-align:center;max-width:900px;margin:0 auto}
-.trip h2 {font-size:clamp(1.3rem,2.5vw,1.8rem);margin-bottom:30px}
-.trip-item {background:#fdf0f5;padding:18px 20px;border-radius:12px;margin:10px 0;text-align:left}
-.trip-item h4 {color:#d1396d;font-size:1rem;margin-bottom:4px}
-.trip-item p {font-size:0.95rem;color:#444}
-.cta-btn {display:inline-block;background:#ff4a8a;color:#fff;padding:16px 36px;border-radius:50px;text-decoration:none;font-weight:bold;margin-top:30px}
+.section{padding:50px 0;text-align:center}
+.section h2{font-size:22px;margin-bottom:20px}
 
-/* Gallery Section */
-.gallery {padding:60px 20px;background:#f5f7fa}
-.gallery-grid {display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:800px;margin:0 auto}
-.gallery img {width:100%;border-radius:14px;object-fit:cover;aspect-ratio:1/1;decoding:async}
+.env-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-top:12px;
+}
+.env-grid img{
+width:100%;
+aspect-ratio:7/4;
+object-fit:cover;
+border-radius:14px;
+}
 
-/* Modal Style */
-.modal {display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:1000}
-.modal-content {position:relative;margin:50px auto;background:#fff;width:90%;max-width:500px;max-height:80vh;overflow-y:auto;padding:25px;border-radius:16px}
-.close {position:absolute;top:15px;right:18px;font-size:1.5rem;cursor:pointer;background:none;border:none;color:#333}
-.close:hover {color:#ff4a8a}
-.modal-content h3 {margin-bottom:15px;color:#222;border-bottom:1px solid #eee;padding-bottom:10px}
-.modal-content p {margin-bottom:12px;line-height:1.7;color:#555}
-.modal-content h4 {margin:18px 0 10px;color:#333;font-size:1.1rem}
+.float{
+position:fixed;
+right:18px;
+bottom:25px;
+background:#25D366;
+color:#fff;
+padding:14px 20px;
+border-radius:100px;
+font-weight:bold;
+text-decoration:none;
+z-index:999;
+transition:all 0.3s ease;
+}
+.float:hover{
+background:#1ebe5f;
+transform:translateY(-2px);
+}
 
-/* Float Button */
-.float-wa {position:fixed;bottom:20px;left:20px;background:#25d366;color:#fff;padding:14px 22px;border-radius:50px;text-decoration:none;font-weight:bold;box-shadow:0 3px 10px rgba(0,0,0,0.2);z-index:999}
+.modal{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,.6);
+z-index:1000;
+align-items:flex-start; 
+justify-content:center;
+padding:20px;
+overflow-y:auto; 
+}
+.modal-body{
+background:#fff;
+width:100%;
+max-width:500px;
+margin-top:20px; 
+padding:25px;
+border-radius:12px;
+line-height:1.7;
+max-height:85vh; 
+overflow-y:auto; 
+position:relative;
+}
+.close{
+position:absolute;
+top:15px;
+right:15px;
+font-size:22px;
+cursor:pointer;
+width:30px;
+height:30px;
+line-height:30px;
+text-align:center;
+background:#f5f5f5;
+border-radius:50%;
+z-index:10; 
+}
+.modal-body h3{
+margin-bottom:15px;
+text-align:center;
+font-size:clamp(18px, 4vw, 20px); 
+margin-top:10px; 
+}
+.modal-body p{
+font-size:clamp(14px, 3vw, 15px);
+margin-bottom:12px;
+color:#333;
+}
+.modal-body .policy-item {
+margin-bottom:8px;
+padding-left:5px;
+}
 
-/* Footer */
-footer {padding:40px 20px;background:#222;color:#fff;text-align:center}
-.footer-links {margin-bottom:20px}
-.footer-links button {background:none;border:none;color:#ccc;margin:0 8px;font-size:0.9rem;cursor:pointer}
-.footer-links button:hover {color:#fff}
-footer p {font-size:0.85rem;color:#aaa;margin-top:10px}
-.compliance {background:#fff4e5;color:#e65100;padding:12px;font-size:0.85rem;text-align:center}
+footer{background:#111;color:#ccc;padding:35px 20px;text-align:center;font-size:12px;line-height:1.7}
+footer a{color:#b4926b;text-decoration:none;margin:0 6px;cursor:pointer}
 </style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // 模态框
-  window.openModal = function(id) { 
-    document.getElementById(id).style.display = "block";
-  };
-  window.closeModal = function(id) { 
-    document.getElementById(id).style.display = "none"; 
-  };
-  document.addEventListener('click', function(e) {
-    if(e.target.classList.contains('modal')) e.target.style.display = 'none';
-  });
-
-  // 视频控制
-  const video = document.getElementById('main-video');
-  const centerPlay = document.getElementById('center-play');
-  const ppBtn = document.getElementById('play-pause-btn');
-  const volumeBtn = document.getElementById('volume-btn');
-  
-  let isPlaying = false;
-  let isMuted = false;
-
-  // 初始化
-  video.muted = isMuted;
-  volumeBtn.textContent = '🔊';
-
-  // 兼容手机端：点击中央播放（修复无法播放）
-  centerPlay.addEventListener('click', async function() {
-    try {
-      // 强制加载视频
-      video.load();
-      await video.play();
-      isPlaying = true;
-      centerPlay.style.display = 'none';
-      ppBtn.style.display = 'flex';
-      ppBtn.textContent = '⏸️';
-    } catch (e) {
-      // 手机浏览器兼容 fallback
-      video.muted = false;
-      video.play().then(() => {
-        isPlaying = true;
-        centerPlay.style.display = 'none';
-        ppBtn.style.display = 'flex';
-        ppBtn.textContent = '⏸️';
-      });
-    }
-  });
-
-  // 右下角暂停/播放
-  ppBtn.addEventListener('click', async function() {
-    try {
-      if (isPlaying) {
-        video.pause();
-        isPlaying = false;
-        ppBtn.textContent = '▶️';
-      } else {
-        await video.play();
-        isPlaying = true;
-        ppBtn.textContent = '⏸️';
-      }
-    } catch (e) {}
-  });
-
-  // 音量开关
-  volumeBtn.addEventListener('click', function() {
-    isMuted = !isMuted;
-    video.muted = isMuted;
-    volumeBtn.textContent = isMuted ? '🔇' : '🔊';
-  });
-
-  // 视频状态同步
-  video.addEventListener('play', () => {
-    isPlaying = true;
-    centerPlay.style.display = 'none';
-    ppBtn.style.display = 'flex';
-    ppBtn.textContent = '⏸️';
-  });
-  
-  video.addEventListener('pause', () => {
-    isPlaying = false;
-    ppBtn.textContent = '▶️';
-  });
-});
-</script>
 </head>
+
 <body>
 
-<section class="hero">
-  <h1>Come to Chongqing, Be Your Best Version</h1>
-  <p>A journey to enhance your charm and confidence with private, secure one-on-one professional consulting services.</p>
-</section>
+<div class="hero">
+<div class="content container">
+<h1>Aesthetic Journey in Chongqing: Customize Your Confidence Curve</h1>
+<p>Born extraordinary · Striving for beauty · Bilingual companionship · Safe and private</p>
+<a href="https://wa.me/8617775737394" class="btn">Get a customized solution</a>
+</div>
+</div>
 
-<section class="video-sec">
-  <div class="video-box">
-    <video id="main-video" loop playsinline preload="auto" 
-      poster="https://img.ruiximeixue.com/2%E7%89%88%E7%B4%A0%E6%9D%90/%E6%9C%AA%E5%91%BD%E5%90%8D.jpg">
-      <source src="https://img.ruiximeixue.com/2%E7%89%88%E7%B4%A0%E6%9D%90/0531_1.mp4" type="video/mp4">
-      <source src="https://img.ruiximeixue.com/2%E7%89%88%E7%B4%A0%E6%9D%90/0531_1.webm" type="video/webm">
-    </video>
-    <!-- 中央播放按钮 -->
-    <button class="center-play" id="center-play">▶️</button>
-    <!-- 右下角暂停按钮 -->
-    <button class="play-pause-btn" id="play-pause-btn">⏸️</button>
-    <!-- 右下角音量键 -->
-    <button class="volume-control" id="volume-btn"></button>
-  </div>
-  <h2>Chongqing Luxury Tour & Meet Better You</h2>
-  <p>Private Travel | One-on-One Image Consultation | VIP Service | Safe & Discreet</p>
-</section>
+<div class="compliance">
+⚠️ This page provides aesthetic service consultations and travel planning demonstrations only, and does not constitute medical treatment, diagnosis, or a promise of results.
+</div>
 
-<section class="service">
-  <h2>Our Exclusive Services</h2>
-  <div class="service-grid">
-    <div class="service-card"><h3>Luxury Travel</h3><p>VIP pickup, 5-star hotel, city tour & private itinerary</p></div>
-    <div class="service-card"><h3>Customized Image Consultation</h3><p>Full-body style advice and confidence-building services</p></div>
-    <div class="service-card"><h3>Private & Safe</h3><p>100% discreet service, no hidden fees, full privacy</p></div>
-    <div class="service-card"><h3>Full Support</h3><p>Bilingual accompaniment and 24/7 VIP support</p></div>
-  </div>
-</section>
+<div class="section">
+<div class="container">
+<h2>One-stop travel beauty planning</h2>
+<p style="margin-bottom:20px">Personalized aesthetic customization · Bilingual accompaniment throughout the process · Guaranteed privacy · Transparent pricing with no hidden costs · Long-term after-sales follow-up</p>
+<div class="img-grid">
+<img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/1.jpg" alt="服务">
+<img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/2.jpg" alt="服务">
+<img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/3.jpg" alt="服务">
+<img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/4.jpg" alt="服务">
+</div>
+</div>
+</div>
 
-<section class="trip">
-  <h2>5D4N Beauty Transformation Trip</h2>
-  <div class="trip-item"><h4>Day 1 - Arrival & First Experience</h4><p>VIP airport pickup, private consultation & customized plan confirmation</p></div>
-  <div class="trip-item"><h4>Day 2 - Aesthetics Customization Day</h4><p>Professional one-on-one guidance & exclusive beauty arrangement</p></div>
-  <div class="trip-item"><h4>Day 3 - River View Relaxation</h4><p>Comfortable rest and romantic restorative setting</p></div>
-  <div class="trip-item"><h4>Day 4 - Mountain City Tour</h4><p>Deep exploration tour and comfortable accommodation</p></div>
-  <div class="trip-item"><h4>Day 5 - Culinary Delight & Confidence Return</h4><p>Delicious food, final check-up, and VIP shuttle home</p></div>
-  <a href="https://wa.me/8617775737394" class="cta-btn">Book Now</a>
-</section>
+<div class="section" style="background:#fafafa;">
+<div class="container">
+<h2>Beautiful Chongqing</h2>
+<p style="margin-bottom:20px;">A city of mountains and rivers, bustling with prosperity – a trip to Chongqing is truly breathtaking.</p>
+<div class="img-grid">
+<img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/5.webp" alt="重庆">
+<img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/6.webp" alt="重庆">
+<img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/7.webp" alt="重庆">
+<img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/8.webp" alt="重庆">
+</div>
+</div>
+</div>
 
-<section class="gallery">
-  <div class="gallery-grid">
-    <img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/6.webp" alt="Environment" loading="lazy">
-    <img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/7.webp" alt="Environment" loading="lazy">
-    <img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/13.webp" alt="Environment" loading="lazy">
-    <img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/15.webp" alt="Environment" loading="lazy">
-  </div>
-</section>
+<div class="package">
+<div class="container">
+<h2>Customized Aesthetic Consultation · Chongqing Luxury Tour</h2>
+<p class="sub">Beauty – Tailor-made | Travel – Bilingual | Privacy – Transparency – Long-lasting companionship</p>
 
-<a href="https://wa.me/8617775737394" class="float-wa">Contact Now</a>
+<!-- Basic Package -->
+<div class="card">
+<h3>Basic Package</h3>
+<p>✅ Personalized aesthetic customization solutions</p>
+<p>✅ 1-on-1 consultation service</p>
+<p>✅ Private airport pick-up + accommodation</p>
+<p>✅ 5 days 4 nights luxury hotel</p>
+<p>✅ Attractions + Food</p>
+<p>✅ Privacy guaranteed throughout the entire process</p>
+<a href="https://wa.me/8617775737394" class="btn" style="width:100%;text-align:center">Inquire Now</a>
+</div>
+
+<!-- Luxury Package (Featured) -->
+<div class="card" style="border:2px solid #b4926b">
+<h3>Luxury Package (Featured)</h3>
+<p>✅ High-end aesthetic customization solutions</p>
+<p>✅ 1-on-1 consultation service</p>
+<p>✅ Bilingual escort</p>
+<p>✅ butler service</p>
+<p>✅ Private airport pick-up + accommodation</p>
+<p>✅ 5 days 4 nights luxury hotel</p>
+<p>✅ Attractions + Food</p>
+<p>✅ Privacy guaranteed throughout the entire process</p>
+<p>✅ VIP Exclusive Service</p>
+<a href="https://wa.me/8617775737394" class="btn" style="width:100%;text-align:center">Inquire Now</a>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="container">
+<h2>Elegant and private environment</h2>
+<div class="env-grid">
+<img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/13.webp" alt="环境">
+<img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/14.webp" alt="环境">
+<img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/15.webp" alt="环境">
+<img src="https://img.ruiximeixue.com/1%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/16.webp" alt="环境">
+</div>
+</div>
+</div>
+
+<a href="https://wa.me/8617775737394" class="float">Contact us now</a>
+
+<div id="privacy" class="modal">
+<div class="modal-body">
+<div class="close" onclick="closeModal('privacy')">×</div>
+<h3>Privacy Policy</h3>
+<p class="policy-item">1. We are committed to protecting the privacy and security of your personal information. Any personal data collected through this platform (including but not limited to contact information, health-related inquiries, and travel preferences) is solely used for the purpose of providing aesthetic consultation and travel planning services.</p>
+<p class="policy-item">2. All user information is encrypted and stored in a secure manner. Access to your personal data is restricted to authorized personnel only who are bound by confidentiality obligations. We will never sell, rent, or disclose your personal information to third parties without your explicit written consent, except as required by applicable laws and regulations.</p>
+<p class="policy-item">3. We will not use your personal information for any advertising or commercial marketing purposes without your prior consent. You have the right to request access to, correction of, or deletion of your personal information at any time by contacting our customer service team.</p>
+<p class="policy-item">4. We may collect non-identifiable usage data (such as page views and interaction patterns) to improve our services, and such data will not be linked to your personal identity.</p>
+<p class="policy-item">5. This Privacy Policy applies to all users who access or use our services through this website. We reserve the right to update this policy as needed, and any changes will be posted on this page with effective date indicated.</p>
+<p class="policy-item">6. By using our services, you acknowledge that you have read, understood, and agreed to the terms of this Privacy Policy. If you do not agree with any part of this policy, please refrain from using our services.</p>
+</div>
+</div>
+
+<div id="terms" class="modal">
+<div class="modal-body">
+<div class="close" onclick="closeModal('terms')">×</div>
+<h3>Terms of Service</h3>
+<p class="policy-item">1. Scope of Services: This platform provides professional aesthetic consultation, travel itinerary planning, and related auxiliary services only. All services are for informational and consultative purposes and do not constitute medical advice or treatment.</p>
+<p class="policy-item">2. Customization and Confirmation: All service plans are customized based on your individual needs and preferences. The final service content shall be subject to the offline consultation results and signed service agreement (if applicable).</p>
+<p class="policy-item">3. Pricing and Payment: All service fees are transparent and clearly stated at the time of consultation, with no hidden charges or mandatory additional purchases. Payment terms and cancellation policies will be confirmed separately for each service package.</p>
+<p class="policy-item">4. User Obligations: You agree to provide true, accurate, and complete information when using our services, and to promptly update any changes to such information. You shall not conceal any health conditions that may affect the suitability of aesthetic consultation or travel arrangements.</p>
+<p class="policy-item">5. Bilingual and Concierge Services: Bilingual escort and butler services (as part of premium packages) are provided to ensure smooth communication and travel experience, and are subject to availability at the time of booking.</p>
+<p class="policy-item">6. Cancellation and Refund: Cancellations due to personal reasons shall be handled in accordance with the cancellation rules agreed upon at the time of service booking. Refund amounts (if applicable) will be calculated based on the stage of service provision and actual costs incurred.</p>
+<p class="policy-item">7. Intellectual Property: All content on this website (including text, images, and logos) is protected by intellectual property laws. Unauthorized reproduction, distribution, or modification of such content is prohibited.</p>
+<p class="policy-item">8. Termination of Services: We reserve the right to terminate or suspend services if you violate these Terms of Service or engage in any fraudulent or inappropriate behavior that may harm our interests or reputation.</p>
+</div>
+</div>
+
+<div id="disclaimer" class="modal">
+<div class="modal-body">
+<div class="close" onclick="closeModal('disclaimer')">×</div>
+<h3>Disclaimer</h3>
+<p class="policy-item">1. No Medical Guarantee: This website only provides aesthetic consultation and travel planning information, and does not constitute medical diagnosis, treatment, or any guarantee of aesthetic results. The effectiveness of any aesthetic suggestions varies from person to person based on individual physical conditions and other factors.</p>
+<p class="policy-item">2. Third-Party Risks: We are not responsible for any losses or damages arising from changes in third-party policies (such as visa regulations, flight schedules, or hotel policies), force majeure events (including natural disasters, public health emergencies, and political unrest), or actions of third-party service providers.</p>
+<p class="policy-item">3. User Responsibility: You are solely responsible for any decisions made based on the information provided on this website, including but not limited to aesthetic choices and travel arrangements. We shall not be liable for any adverse consequences resulting from your failure to disclose medical history or relevant health information.</p>
+<p class="policy-item">4. Image and Content Disclaimer: All images, environment displays, and team introductions on this website are for demonstration purposes only and do not constitute a guarantee of service quality or aesthetic results. Actual services and environments may vary slightly from the displayed content.</p>
+<p class="policy-item">5. Cross-Border Travel Uncertainties: Cross-border travel involves uncertainties such as visa approval, flight delays/cancellations, and changes in local regulations. We only provide assistance in coordinating travel arrangements and shall not be liable for any losses caused by such uncertainties.</p>
+<p class="policy-item">6. Limitation of Liability: To the maximum extent permitted by applicable law, we shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our services, including but not limited to loss of profits, loss of opportunity, or emotional distress.</p>
+<p class="policy-item">7. Compliance with Regulations: This website complies with the advertising rules of overseas social media platforms and is intended for consultation purposes only. Users are responsible for complying with the laws and regulations of their country/region of residence and the destination country/region.</p>
+</div>
+</div>
+
+<div id="contact" class="modal">
+<div class="modal-body">
+<div class="close" onclick="closeModal('contact')">×</div>
+<h3> Contact Us</h3>
+<p>e-mail：840575653@qq.com</p>
+<p>WhatsApp：+8617775737394</p>
+<p>Address: Units 1-1, 2-1, 3-1, and 4-1, Building 22, No. 11 Tianlan Avenue, Jiangbei District, Chongqing, China</p>
+</div>
+</div>
 
 <footer>
-  <div class="footer-links">
-    <button onclick="openModal('privacy')">Privacy Policy</button>
-    <button onclick="openModal('terms')">Terms of Service</button>
-    <button onclick="openModal('disclaimer')">Disclaimer</button>
-    <button onclick="openModal('contact')">Contact Us</button>
-  </div>
-  <p>© 2025 Ruixi Aesthetics. All rights reserved.</p>
+<div>
+<a onclick="openModal('privacy')">Privacy Policy</a>｜
+<a onclick="openModal('terms')">Terms of Service</a>｜
+<a onclick="openModal('disclaimer')">Disclaimer</a>｜
+<a onclick="openModal('contact')">Contact Us</a>
+</div>
+<p style="margin-top:15px">
+All content on this website is for aesthetic service consultation purposes only and does not constitute any medical treatment or guarantee of results. We strictly adhere to the advertising compliance rules of overseas social media platforms.
+</p>
+<p style="margin-top:12px">
+Ruixi Aesthetics | China Unified Credit Code: 91500105MA608QN25L<br>
+</p>
+<p style="margin-top:15px">© 2025 Ruixi Aesthetics | Privacy Policy | Copyright Reserved</p>
 </footer>
 
-<div id="privacy" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('privacy')">&times;</span><h3>Privacy Policy</h3><p>Last updated: Jan 2025</p></div></div>
-<div id="terms" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('terms')">&times;</span><h3>Terms of Service</h3><p>Last updated: Jan 2025</p></div></div>
-<div id="disclaimer" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('disclaimer')">&times;</span><h3>Disclaimer</h3><p>Last updated: Jan 2025</p></div></div>
-<div id="contact" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('contact')">&times;</span><h3>Contact Us</h3><p>WhatsApp: +86 17775737394</p></div></div>
+<script>
+function openModal(id){
+const modal=document.getElementById(id);
+if(modal){
+modal.style.display='flex';
+document.body.style.overflow='hidden';
+}
+}
+function closeModal(id){
+const modal=document.getElementById(id);
+if(modal){
+modal.style.display='none';
+document.body.style.overflow='auto';
+}
+}
+window.onclick=function(e){
+if(e.target.classList.contains('modal')){
+['privacy','terms','disclaimer','contact'].forEach(id=>closeModal(id));
+}
+}
+document.addEventListener('keydown',function(e){
+if(e.key==='Escape'){
+['privacy','terms','disclaimer','contact'].forEach(id=>closeModal(id));
+}
+});
+</script>
 
-<div class="compliance">All content for aesthetic consultation only. No medical treatment or effect guarantee.</div>
 </body>
 </html>
